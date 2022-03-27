@@ -2,7 +2,7 @@ import './AdDesigner.css';
 import {useState} from 'react';
 
 function AdDesigner(){
-    const [fontSize, setFontSize] = useState(12);
+    const [fontSize, setFontSize] = useState(24);
     const [flavor, setFlavor] = useState("");
     const sizeChange = {
         fontSize: fontSize + "px"
@@ -14,7 +14,14 @@ function AdDesigner(){
     }else{
         addClass = " darkTheme"
     }
-    
+
+    //Figure out Disabling buttons on click
+    const [disable, setDisable] = useState(false);
+    let buttonClass = "";
+    if(disable){
+        buttonClass = " disabledButton"
+    }
+
     return(
         <div className="adContainer">
             <h1>Ad Designer</h1>
@@ -33,8 +40,20 @@ function AdDesigner(){
             <div className="themeContainer">
                 <h2>Color Theme</h2>
                 <div>
-                    <button onClick = {() => setTheme("lightTheme")}> Light </button>
-                    <button onClick = {() => setTheme("darkTheme")}>Dark</button>
+                    <button className={buttonClass} disabled ={disable}
+                    onClick = {() => {
+                        setTheme("lightTheme"); 
+                        //setDisable(true);
+                    }}> 
+                        Light 
+                        </button>
+                    <button className={buttonClass} disabled={disable}
+                    onClick = {() => {
+                        setTheme("darkTheme");
+                        //setDisable(true);
+                    }}>
+                        Dark
+                    </button>
                 </div>
             </div>
             <div className="fontContainer">

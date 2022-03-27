@@ -1,0 +1,16 @@
+@media only screen and (min-width: 768px) {
+    header{
+        width: 100%;
+    }
+    .pageContainer{
+        position: fixed;
+        display: flex;
+        margin-left: 5%;
+        padding: 0px 30px;
+    }
+
+    .rightSide{
+        margin-left: 105px;
+    }
+    
+  }

@@ -1,0 +1,63 @@
+h1{
+    font-family: "Caveat";
+    margin-bottom: 10px;
+}
+
+.voteContainer{
+    margin: 10px;
+}
+
+.chocolateBarContainer{
+    height: 20px;
+    width: 50%;
+}
+
+.chocolateBar{
+    width: 100%;
+    height: 20px;
+    background-color: #4f2c2c;
+}
+
+.vanillaBarContainer{
+    height: 20px;
+    width: 50%;
+}
+
+.vanillaBar{
+    width: 100%;
+    height: 20px;
+    background-color: #cbc0ac;
+}
+
+.strawberryBarContainer{
+    height: 20px;
+    width: 50%;
+}
+
+.strawberryBar{
+    width: 100%;
+    height: 20px;
+    background-color: #de8c91;
+}
+
+
+@media only screen and (min-width: 768px) {
+    body{
+        font-size: 120%;
+    }
+    button{
+        font-size: 80%;
+    }
+    .chocolateBarContainer{
+        height: 20px;
+        width: 100%;
+    }
+    
+    .strawberryBarContainer{
+        width: 100%;
+    }
+
+    .vanillaBarContainer{
+        width: 100%;
+    }
+}
