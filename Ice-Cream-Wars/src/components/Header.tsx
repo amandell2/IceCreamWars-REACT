@@ -1,8 +1,18 @@
 import './Header.css';
 
-function Header(){
+interface Props{
+    user: string;
+}
+
+
+function Header({user}: Props){
     return(
-    <h1 className="header">Ice Cream Wars</h1>
+    <div className = "Header_container">
+    <h1 className="Header--title">Ice Cream Wars</h1>
+    <div className = "Header--user">
+        <p>Hello {user}</p>
+        </div>
+    </div>
     );
 }
 

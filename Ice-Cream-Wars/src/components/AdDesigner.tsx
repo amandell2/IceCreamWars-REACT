@@ -1,5 +1,6 @@
 import './AdDesigner.css';
 import {useState} from 'react';
+import Ad from './Ad';
 
 function AdDesigner(){
     const [fontSize, setFontSize] = useState(24);
@@ -7,50 +8,48 @@ function AdDesigner(){
     const sizeChange = {
         fontSize: fontSize + "px"
     };
-    const [theme, setTheme] = useState("lightTheme")
+    const [darkTheme, setDarkTheme] = useState(true);
     let addClass = "";
-    if(theme === "lightTheme"){
-        addClass = " lightTheme"
-    }else{
+    if(darkTheme){
         addClass = " darkTheme"
+    }else{
+        addClass = " lightTheme"
     }
 
-    //Figure out Disabling buttons on click
-    const [disable, setDisable] = useState(false);
-    let buttonClass = "";
-    if(disable){
-        buttonClass = " disabledButton"
-    }
 
     return(
         <div className="adContainer">
             <h1>Ad Designer</h1>
-            <div className= {"Ad" + addClass}>
+            <div className= {"AdDesigner-Ad" + addClass}>
                 <p>Vote for</p>
                 <p className="flavorDisplay" style={sizeChange}>{flavor}</p>
             </div>
             <div className="flavorContainer">
                 <h2>What to Support</h2>
                 <div>
-                    <button onClick = {()=> setFlavor("Chocolate")}>Chocolate</button>
-                    <button onClick = {()=> setFlavor("Vanilla")}>Vanilla</button>
-                    <button onClick = {()=> setFlavor("Strawberry")}>Strawberry</button>
+                    <button disabled = {flavor === "Chocolate"} onClick = {()=> setFlavor("Chocolate")}>
+                        Chocolate
+                        </button>
+                    <button disabled = {flavor === "Vanilla"} onClick = {()=> setFlavor("Vanilla")}>
+                        Vanilla
+                        </button>
+                    <button disabled = {flavor === "Strawberry"} onClick = {()=> setFlavor("Strawberry")}>
+                        Strawberry
+                        </button>
                 </div>
             </div>
             <div className="themeContainer">
                 <h2>Color Theme</h2>
                 <div>
-                    <button className={buttonClass} disabled ={disable}
+                    <button disabled ={!darkTheme}
                     onClick = {() => {
-                        setTheme("lightTheme"); 
-                        //setDisable(true);
+                        setDarkTheme(false);
                     }}> 
                         Light 
                         </button>
-                    <button className={buttonClass} disabled={disable}
+                    <button disabled={darkTheme}
                     onClick = {() => {
-                        setTheme("darkTheme");
-                        //setDisable(true);
+                        setDarkTheme(true);
                     }}>
                         Dark
                     </button>

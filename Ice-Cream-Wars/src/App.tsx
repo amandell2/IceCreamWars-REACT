@@ -3,20 +3,35 @@ import './App.css';
 import Header from './components/Header';
 import AdDesigner from './components/AdDesigner';
 import Votes from "./components/Votes";
+import Ad from './components/Ad'
 
 function App() {
   return (
     <div className="App">
       <header>
-        <Header/>
+        <Header user= "Chirpus"/>
       </header>
+      <section className="Ad_Container">
+        <Ad flavor="Chocolate"
+        fontSize={35}
+        darkTheme={true}/>
+
+        <Ad flavor="Vanilla"
+        fontSize={24}
+        darkTheme={false}/>
+
+        <Ad flavor="Strawberry"
+        fontSize={42}
+        darkTheme={true}/>
+
+      </section>
       <div className="pageContainer">
-      <div className="leftSide">
+      <section className="leftSide">
         <AdDesigner/>
-      </div>
-      <div className="rightSide">
+      </section>
+      <section className="rightSide">
         <Votes/>
-      </div>
+      </section>
       </div>
     </div>
   );
