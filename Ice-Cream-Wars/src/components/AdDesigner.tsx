@@ -20,10 +20,10 @@ function AdDesigner(){
     return(
         <div className="adContainer">
             <h1>Ad Designer</h1>
-            <div className= {"AdDesigner-Ad" + addClass}>
-                <p>Vote for</p>
-                <p className="flavorDisplay" style={sizeChange}>{flavor}</p>
-            </div>
+            <Ad flavor={flavor}
+                fontSize ={fontSize}
+                darkTheme = {darkTheme}
+            />
             <div className="flavorContainer">
                 <h2>What to Support</h2>
                 <div>

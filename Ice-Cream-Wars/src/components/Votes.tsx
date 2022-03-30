@@ -8,7 +8,6 @@ function Votes(){
     const [showChocolate, setShowChocolate] = useState(false);
     const [showVanilla, setShowVanilla] = useState(false);
     const [showStrawberry, setShowStrawberry] = useState(false);
-    const [width, setWidth] = useState(0);
 
     let voteCount = chocolateVotes+vanillaVotes+strawberryVotes;
 

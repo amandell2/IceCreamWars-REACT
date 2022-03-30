@@ -1,6 +1,6 @@
 import './Ad.css';
 
-interface Props{
+export interface Props{
     flavor: string;
     fontSize: number;
     darkTheme: boolean;
