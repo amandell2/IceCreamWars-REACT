@@ -10,7 +10,7 @@ function Header({user}: Props){
     <div className = "Header_container">
     <h1 className="Header--title">Ice Cream Wars</h1>
     <div className = "Header--user">
-        <p>Hello {user}</p>
+        <p>Welcome {user}</p>
         </div>
     </div>
     );

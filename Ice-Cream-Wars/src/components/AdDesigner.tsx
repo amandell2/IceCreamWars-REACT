@@ -5,17 +5,7 @@ import Ad from './Ad';
 function AdDesigner(){
     const [fontSize, setFontSize] = useState(24);
     const [flavor, setFlavor] = useState("");
-    const sizeChange = {
-        fontSize: fontSize + "px"
-    };
     const [darkTheme, setDarkTheme] = useState(true);
-    let addClass = "";
-    if(darkTheme){
-        addClass = " darkTheme"
-    }else{
-        addClass = " lightTheme"
-    }
-
 
     return(
         <div className="adContainer">
